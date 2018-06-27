@@ -17,7 +17,7 @@ class EndPoint extends API{
         if($this->method == 'GET' && isset($this->verb)){
             $data = new Agent($this->verb);
         }elseif($this->method == 'GET' && !isset($this->verb)){
-            $data = Agent::get("","");
+            $data = Agent::get("IsAgent","true");
         }elseif($this->method == 'POST' && !isset($this->verb)){
             throw new \Exception('Cannot POST here.');
         }elseif($this->method == 'PUT' && isset($this->verb)){
